@@ -1,0 +1,77 @@
+<map proto="1.4.0" game="Regret">
+<name>Regret</name>
+<gamemode>ffa</gamemode>
+<authors>
+    <author>Amen<author/>
+</authors>
+<version>1.0.0</version>
+<objective>Kill as many players as possible in 4 minutes</objective>
+<time>4m</time>
+<players min="1" max="18"/>
+<score>
+    <kills>1</kills>
+</score>
+<kits>
+    <kit id="players-kit">
+        <item slot="0">wood sword</item>
+	<item slot="1">fishing rod</item>
+        <item slot="2">bow</item>
+        <item slot="3">golden apple</item>
+        <item slot="4" amount="4">arrow</item>
+        <helmet unbreakable="true">leather helmet</helmet>
+        <chestplate unbreakable="true">leather chestplate</chestplate>
+        <leggings unbreakable="true">leather leggings</leggings>
+        <boots unbreakable="true" enchantment="depth_strider:3">leather boots</boots>
+    </kit>
+    <kit id="kill-reward">
+        <item slot="3">golden apple</item>
+        <potion duration="3" amplifier="2">regeneration</potion>
+        <item amount="3">arrow</item>
+    </kit>
+</kits>
+<regions>
+    <cuboid id="block-region" min="-263,0,90" max="-296,33,145"/>
+    <apply block="wood-filter">
+        <region>
+            <region id="block-region"/>
+        </region>
+    </apply>
+    <apply block="never" region="everywhere" message="You may not modify blocks outside of the map"/>
+</regions>
+<filters>
+    <material id="wood-filter">wood</material>
+</filters>
+<itemremove>
+    <item>arrow</item>
+    <item>apple</item>
+    <item>sapling</item>
+    <item>long grass</item>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>leather leggings</item>
+    <item>leather boots</item>
+</itemremove>
+<toolrepair>
+    <tool>bow</tool>
+    <tool>wood sword</tool>
+</toolrepair>
+<kill-rewards>
+    <kill-reward kit="kill-reward"/>
+</kill-rewards>
+<spawns>
+    <spawn kit="players-kit" spread="true" safe="true">
+        <regions angle="-267.5,8,116.5">
+            <cuboid min="-267,4,96" max="-293,15,138"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="0">
+            <point>-280.5,11,97.5</point>
+        </regions>
+    </default>
+</spawns>
+<hunger>
+    <depletion>off</depletion>
+</hunger>
+<timelock>on</timelock>
+</map>

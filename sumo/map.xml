@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<map proto="1.3.5">
+<name>Sumo</name>
+<version>1.0.4</version>
+<objective>Gain 100 points!</objective>
+<authors>
+    <author uuid="bc27afd7-6889-4811-97c9-135ee46cdabc"/>
+</authors>
+<teams>
+    <team color="red" max="3">Red</team>
+    <team color="dark_blue" max="3">Blue</team>
+</teams>
+<kits>
+    <kit name="blue">
+        <boots color="334CB2" damage="-3000">leather boots</boots>
+    </kit>
+    <kit name="red">
+        <boots color="993333" damage="-3000">leather boots</boots>
+    </kit>
+    <kit name="obs" potion-particles="false">
+        <potion duration="oo">night vision</potion>
+    </kit>
+</kits>
+<regions>
+    <apply block="deny-all">
+        <rectangle min="-oo,-oo" max="oo,oo"/>
+    </apply>
+</regions>
+<spawns>
+    <spawn team="blue" kit="blue" yaw="180">
+        <point>1,4,10</point>
+    </spawn>
+    <spawn team="red" kit="red" yaw="0">
+        <point>1,4,-16</point>
+    </spawn>
+    <default kit="obs" yaw="180">
+        <point>1,2,-3</point>
+    </default>
+</spawns>
+<itemremove>
+    <item>leather boots</item>
+</itemremove>
+<killreward>
+    <item amount="1">golden apple</item>
+</killreward>
+<timelock>on</timelock>
+<control-points capture-time="8s" incremental="true" neutral-state="false" show-progress="true" scaled-time="true" time-multiplier="0.5">
+    <control-point name="Middle" points="1">
+        <capture-region>
+            <cuboid min="-3,1,1" max="6,4,-7"/>
+        </capture-region>
+        <progress-display-region>
+            <cuboid min="-3,1,1" max="6,4,-7"/>
+        </progress-display-region>
+    </control-point>
+</control-points>
+<score>
+    <limit>100</limit>
+    <king/>
+</score>
+</map>
