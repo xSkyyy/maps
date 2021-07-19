@@ -2,7 +2,7 @@
 <name>Regret</name>
 <gamemode>ffa</gamemode>
 <authors>
-    <author>Amen<author/>
+    <author>Amen</author>
 </authors>
 <version>1.0.0</version>
 <objective>Kill as many players as possible in 4 minutes</objective>
